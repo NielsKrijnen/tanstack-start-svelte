@@ -1,0 +1,1 @@
+export { default as GenericHydrate } from "./GenericHydrate.svelte"

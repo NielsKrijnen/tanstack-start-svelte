@@ -1,0 +1,60 @@
+{
+  "name": "tanstack-svelte-start-client",
+  "version": "0.0.1",
+  "description": "Modern and scalable routing for Svelte applications",
+  "author": "Niels Krijnen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NielsKrijnen/tanstack-start-svelte",
+    "directory": "packages/svelte-start-client"
+  },
+  "keywords": [
+    "solid",
+    "location",
+    "router",
+    "routing",
+    "async",
+    "async router",
+    "typescript"
+  ],
+  "type": "module",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./hydration": {
+      "import": {
+        "types": "./dist/esm/hydration.d.ts",
+        "default": "./dist/esm/hydration.js"
+      }
+    },
+    "./Hydrate": {
+      "import": {
+        "types": "./dist/esm/Hydrate.d.ts",
+        "default": "./dist/esm/Hydrate.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@tanstack/router-core": "^1.171.13",
+    "tanstack-svelte-router": "workspace:*",
+    "@tanstack/start-client-core": "^1.170.12"
+  },
+  "peerDependencies": {
+    "svelte": ">=5.3.0"
+  }
+}
