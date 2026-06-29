@@ -2,8 +2,8 @@
   import { type AnyRoute, rootRouteId } from "@tanstack/router-core"
   import { isServer } from "@tanstack/router-core/isServer"
   import { useRouter } from "../useRouter"
-  import ResolvedSuspense from "./ResolvedSuspense.svelte"
   import MatchesInner from "./MatchesInner.svelte"
+  import Suspense from "../Suspense.svelte"
 
   const router = useRouter()
 
@@ -19,7 +19,7 @@
   {#if (isServer ?? router.isServer) || (typeof document !== "undefined" && router.ssr)}
     {@render Content()}
   {:else}
-    <ResolvedSuspense>
+    <Suspense>
       {#snippet fallback()}
         {@const PendingComponent = rootRoute().options.pendingComponent ?? router.options.defaultPendingComponent}
         {#if PendingComponent}
@@ -27,7 +27,7 @@
         {/if}
       {/snippet}
       {@render Content()}
-    </ResolvedSuspense>
+    </Suspense>
   {/if}
 {/snippet}
 

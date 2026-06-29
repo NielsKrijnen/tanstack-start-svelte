@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { AnyRouter } from "@tanstack/router-core"
   import { hydrate } from "@tanstack/router-core/ssr/client"
+  import { RouterProvider } from "../RouterProvider"
+  import RouterClientInnerWrap from "./RouterClientInnerWrap.svelte"
 
   let { router }: { router: AnyRouter } = $props()
 
@@ -18,5 +20,5 @@
 </script>
 
 {#await hydrationPromise then _}
-  <RouterProvider></RouterProvider>
+  <RouterProvider {router} InnerWrap={RouterClientInnerWrap} />
 {/await}
