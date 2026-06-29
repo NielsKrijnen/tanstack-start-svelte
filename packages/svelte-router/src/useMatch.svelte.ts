@@ -71,7 +71,7 @@ export function useMatch<
     }
 
     const hasPendingMatch = opts.from
-      ? Boolean(router.stores.pendingIds.get()[opts.from])
+      ? Boolean(router.stores.pendingRouteIds.get()[opts.from])
       : (nearestMatch?.hasPending ?? false)
 
     if (!hasPendingMatch && !router.stores.isTransitioning.get() && (opts.shouldThrow ?? true)) {
@@ -90,7 +90,7 @@ export function useMatch<
   const selected = $derived.by(() => {
     if (match === undefined) {
       const hasPendingMatch = opts.from
-        ? Boolean(router.stores.pendingIds.get()[opts.from])
+        ? Boolean(router.stores.pendingRouteIds.get()[opts.from])
         : (nearestMatch?.hasPending ?? false)
 
       if (prev !== undefined && (hasPendingMatch || router.stores.isTransitioning.get())) {
