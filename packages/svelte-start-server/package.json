@@ -1,0 +1,59 @@
+{
+  "name": "tanstack-svelte-start-server",
+  "version": "0.0.1",
+  "description": "Modern and scalable routing for Svelte applications",
+  "author": "Niels Krijnen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NielsKrijnen/tanstack-start-svelte",
+    "directory": "packages/svelte-start-server"
+  },
+  "keywords": [
+    "svelte",
+    "location",
+    "router",
+    "routing",
+    "async",
+    "async router",
+    "typescript"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist && rimraf ./coverage",
+    "build": "vite build"
+  },
+  "type": "module",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@tanstack/router-core": "^1.171.13",
+    "tanstack-svelte-router": "workspace:*",
+    "@tanstack/start-server-core": "^1.169.15"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "svelte": "^5.56.4",
+    "svelte-preprocess": "^6.0.5",
+    "typescript": "^6.0.2",
+    "vite": "^8.1.0"
+  },
+  "peerDependencies": {
+    "svelte": ">=5.3.0"
+  }
+}
