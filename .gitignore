@@ -1,1 +1,11 @@
+.vite
+
 node_modules
+
+types
+build
+*/build
+dist
+.output
+lib
+es
