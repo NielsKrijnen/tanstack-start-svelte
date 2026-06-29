@@ -18,13 +18,16 @@
     "async router",
     "typescript"
   ],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json"
+  },
   "type": "module",
   "types": "dist/esm/index.d.ts",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
   "exports": {
     ".": {
-      "solid": {
+      "svelte": {
         "types": "./dist/source/index.d.ts",
         "development": "./dist/source/index.dev.jsx",
         "default": "./dist/source/index.jsx"
@@ -41,7 +44,7 @@
       }
     },
     "./ssr/server": {
-      "solid": {
+      "svelte": {
         "types": "./dist/source/ssr/server.d.ts",
         "default": "./dist/source/ssr/server.js"
       },
@@ -55,7 +58,7 @@
       }
     },
     "./ssr/client": {
-      "solid": {
+      "svelte": {
         "types": "./dist/source/ssr/client.d.ts",
         "default": "./dist/source/ssr/client.js"
       },
@@ -82,12 +85,16 @@
     "node": ">=20.19"
   },
   "dependencies": {
-    "@tanstack/history": "^1.162.0",
     "@tanstack/router-core": "^1.171.13",
-    "isbot": "^5.1.44",
-    "svelte": "^5.56.4"
+    "isbot": "^5.1.44"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1"
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@tanstack/vite-config": "^0.5.2",
+    "@types/node": "^26.0.1",
+    "vite": "^8.1.0"
+  },
+  "peerDependencies": {
+    "svelte": ">=5.3.0"
   }
 }

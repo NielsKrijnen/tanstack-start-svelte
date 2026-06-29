@@ -42,11 +42,13 @@
   }
 </script>
 <script lang="ts">
+  import { GenericHydrate } from "./GenericHydrate"
+
   let props: HydrateProps = $props()
 </script>
 
 {#if typeof props.when === "function" || typeof props.prefetch === "function"}
-<!-- <GenericHydrate {...(props as InternalHydrateProps)} /> -->
+  <GenericHydrate {...props} />
 {:else}
   {@render props.when._h(props)}
 {/if}
